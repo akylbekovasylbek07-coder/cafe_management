@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Удалить стол - Cafe Management{% endblock %}
+
+{% block content %}
+<div class="card border-danger">
+    <div class="card-header bg-danger text-white">
+        <i class="bi bi-exclamation-triangle"></i> Подтверждение удаления
+    </div>
+    <div class="card-body">
+        <p>Вы действительно хотите удалить стол <strong>№{{ object.number }}</strong>?</p>
+        <p class="text-muted">Это действие нельзя отменить.</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash"></i> Удалить
+            </button>
+            <a href="{% url 'tables:table_list' %}" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> Отмена
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

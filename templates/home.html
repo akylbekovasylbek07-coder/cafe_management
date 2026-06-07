@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная - Cafe Management{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4"><i class="bi bi-cup-hot"></i> Добро пожаловать в Cafe Management System</h1>
+    </div>
+</div>
+
+{% if open_shift %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <i class="bi bi-check-circle"></i> 
+            <strong>Текущая смена:</strong> {{ open_shift }}
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle"></i> 
+            <strong>Нет открытой смены!</strong> 
+            <a href="{% url 'shifts:shift_create' %}" class="btn btn-sm btn-warning">Открыть смену</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Столы</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ total_tables }}</h5>
+                <p class="card-text">Всего столов</p>
+                <a href="{% url 'tables:table_list' %}" class="btn btn-light btn-sm">Управление столами</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Заказы</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ open_orders }}</h5>
+                <p class="card-text">Открытых заказов</p>
+                <a href="{% url 'orders:order_list' %}" class="btn btn-light btn-sm">Смотреть заказы</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header">Выручка</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ today_revenue }} ₽</h5>
+                <p class="card-text">За сегодня</p>
+                <a href="{% url 'shifts:shift_list' %}" class="btn btn-light btn-sm">Смотреть статистику</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-lightning"></i> Быстрые действия
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="{% url 'tables:table_create' %}" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-plus-circle"></i> Добавить стол
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="{% url 'menu:dish_create' %}" class="btn btn-outline-success w-100">
+                            <i class="bi bi-plus-circle"></i> Добавить блюдо
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="{% url 'orders:order_create' %}" class="btn btn-outline-info w-100">
+                            <i class="bi bi-plus-circle"></i> Создать заказ
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="{% url 'shifts:shift_create' %}" class="btn btn-outline-warning w-100">
+                            <i class="bi bi-plus-circle"></i> Открыть смену
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

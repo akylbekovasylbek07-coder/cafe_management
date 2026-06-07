@@ -1,0 +1,47 @@
+[
+  {
+    "model": "tables.table",
+    "pk": 1,
+    "fields": {
+      "number": 1,
+      "seats": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "tables.table",
+    "pk": 2,
+    "fields": {
+      "number": 2,
+      "seats": 6,
+      "is_active": true
+    }
+  },
+  {
+    "model": "tables.table",
+    "pk": 3,
+    "fields": {
+      "number": 3,
+      "seats": 2,
+      "is_active": true
+    }
+  },
+  {
+    "model": "tables.table",
+    "pk": 4,
+    "fields": {
+      "number": 4,
+      "seats": 4,
+      "is_active": true
+    }
+  },
+  {
+    "model": "tables.table",
+    "pk": 5,
+    "fields": {
+      "number": 5,
+      "seats": 8,
+      "is_active": true
+    }
+  }
+]

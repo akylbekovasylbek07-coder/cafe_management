@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Открыть смену - Cafe Management{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <i class="bi bi-plus-circle"></i> Открыть новую смену
+    </div>
+    <div class="card-body">
+        <p>Вы уверены, что хотите открыть новую смену?</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Подтвердить
+            </button>
+            <a href="{% url 'shifts:shift_list' %}" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> Отмена
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

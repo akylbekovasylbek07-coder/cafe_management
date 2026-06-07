@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if object %}Изменить заказ{% else %}Создать заказ{% endif %} - Cafe Management{% endblock %}
+
+{% block content %}
+<h1>{% if object %}Изменить заказ{% else %}Создать заказ{% endif %}</h1>
+
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="{{ form.table.id_for_label }}" class="form-label">Стол</label>
+        {{ form.table }}
+        {% if form.table.errors %}
+            <div class="text-danger">{{ form.table.errors }}</div>
+        {% endif %}
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        <i class="bi bi-check-circle"></i> Сохранить
+    </button>
+    <a href="{% url 'orders:order_list' %}" class="btn btn-secondary">
+        <i class="bi bi-x-circle"></i> Отмена
+    </a>
+</form>
+{% endblock %}

@@ -1,0 +1,82 @@
+[
+  {
+    "model": "menu.dish",
+    "pk": 1,
+    "fields": {
+      "name": "Борщ русский",
+      "description": "Традиционный русский борщ со сметаной и пампушками",
+      "price": "250.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.dish",
+    "pk": 2,
+    "fields": {
+      "name": "Пельмени домашние",
+      "description": "Домашние пельмени с мясом и маслом",
+      "price": "320.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.dish",
+    "pk": 3,
+    "fields": {
+      "name": "Оливье",
+      "description": "Классический салат оливье",
+      "price": "280.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.dish",
+    "pk": 4,
+    "fields": {
+      "name": "Цезарь с курицей",
+      "description": "Салат цезарь с куриной грудкой и пармезаном",
+      "price": "350.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.dish",
+    "pk": 5,
+    "fields": {
+      "name": "Бефстроганов",
+      "description": "Говядина по-строгановски со сметанным соусом",
+      "price": "420.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.dish",
+    "pk": 6,
+    "fields": {
+      "name": "Компот",
+      "description": "Домашний компот из свежих фруктов",
+      "price": "120.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.dish",
+    "pk": 7,
+    "fields": {
+      "name": "Чай чёрный",
+      "description": "Чёрный чай с лимоном",
+      "price": "80.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.dish",
+    "pk": 8,
+    "fields": {
+      "name": "Пирог с капустой",
+      "description": "Домашний пирог с капустой",
+      "price": "150.00",
+      "is_available": true
+    }
+  }
+]

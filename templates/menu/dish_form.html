@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if object %}Изменить блюдо{% else %}Добавить блюдо{% endif %} - Cafe Management{% endblock %}
+
+{% block content %}
+<h1>{% if object %}Изменить блюдо{% else %}Добавить блюдо{% endif %}</h1>
+
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="{{ form.name.id_for_label }}" class="form-label">Название</label>
+        {{ form.name }}
+        {% if form.name.errors %}
+            <div class="text-danger">{{ form.name.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <div class="mb-3">
+        <label for="{{ form.description.id_for_label }}" class="form-label">Описание</label>
+        {{ form.description }}
+        {% if form.description.errors %}
+            <div class="text-danger">{{ form.description.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <div class="mb-3">
+        <label for="{{ form.price.id_for_label }}" class="form-label">Цена (₽)</label>
+        {{ form.price }}
+        {% if form.price.errors %}
+            <div class="text-danger">{{ form.price.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <div class="mb-3 form-check">
+        {{ form.is_available }}
+        <label for="{{ form.is_available.id_for_label }}" class="form-check-label">Доступно</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        <i class="bi bi-check-circle"></i> Сохранить
+    </button>
+    <a href="{% url 'menu:dish_list' %}" class="btn btn-secondary">
+        <i class="bi bi-x-circle"></i> Отмена
+    </a>
+</form>
+{% endblock %}

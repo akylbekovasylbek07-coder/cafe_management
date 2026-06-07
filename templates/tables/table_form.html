@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if object %}Изменить стол{% else %}Добавить стол{% endif %} - Cafe Management{% endblock %}
+
+{% block content %}
+<h1>{% if object %}Изменить стол{% else %}Добавить стол{% endif %}</h1>
+
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="{{ form.number.id_for_label }}" class="form-label">Номер стола</label>
+        {{ form.number }}
+        {% if form.number.errors %}
+            <div class="text-danger">{{ form.number.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <div class="mb-3">
+        <label for="{{ form.seats.id_for_label }}" class="form-label">Количество мест</label>
+        {{ form.seats }}
+        {% if form.seats.errors %}
+            <div class="text-danger">{{ form.seats.errors }}</div>
+        {% endif %}
+    </div>
+    
+    <div class="mb-3 form-check">
+        {{ form.is_active }}
+        <label for="{{ form.is_active.id_for_label }}" class="form-check-label">Активен</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        <i class="bi bi-check-circle"></i> Сохранить
+    </button>
+    <a href="{% url 'tables:table_list' %}" class="btn btn-secondary">
+        <i class="bi bi-x-circle"></i> Отмена
+    </a>
+</form>
+{% endblock %}
