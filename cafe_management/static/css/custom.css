@@ -1,0 +1,372 @@
+/* Cafe Management System - Custom Styles */
+
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #858796;
+    --success-color: #1cc88a;
+    --info-color: #36b9cc;
+    --warning-color: #f6c23e;
+    --danger-color: #e74a3b;
+    --light-color: #f8f9fc;
+    --dark-color: #5a5c69;
+}
+
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Навигация */
+.navbar {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Контейнер */
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 1400px;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5 {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+h1 {
+    background: linear-gradient(90deg, #4e73df, #224abe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Карточки */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background: linear-gradient(90deg, #4e73df 0%, #224abe 100%);
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Цветные карточки */
+.card.text-white.bg-primary {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%) !important;
+}
+
+.card.text-white.bg-success {
+    background: linear-gradient(135deg, #1cc88a 0%, #13855c 100%) !important;
+}
+
+.card.text-white.bg-info {
+    background: linear-gradient(135deg, #36b9cc 0%, #258391 100%) !important;
+}
+
+.card.text-white.bg-warning {
+    background: linear-gradient(135deg, #f6c23e 0%, #dda20a 100%) !important;
+}
+
+.card.text-white.bg-danger {
+    background: linear-gradient(135deg, #e74a3b 0%, #be2617 100%) !important;
+}
+
+/* Кнопки */
+.btn {
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #4e73df, #224abe);
+}
+
+.btn-success {
+    background: linear-gradient(90deg, #1cc88a, #13855c);
+}
+
+.btn-info {
+    background: linear-gradient(90deg, #36b9cc, #258391);
+}
+
+.btn-warning {
+    background: linear-gradient(90deg, #f6c23e, #dda20a);
+}
+
+.btn-danger {
+    background: linear-gradient(90deg, #e74a3b, #be2617);
+}
+
+.btn-secondary {
+    background: linear-gradient(90deg, #858796, #606266);
+}
+
+/* Таблицы */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+    background: linear-gradient(90deg, #4e73df, #224abe);
+    color: white;
+}
+
+.table thead th {
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    padding: 1rem;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background: #f8f9fc;
+    transform: scale(1.01);
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Формы */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 2px solid #e3e6f0;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #5a5c69;
+    margin-bottom: 0.5rem;
+}
+
+/* Бейджи */
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.badge.bg-success {
+    background: linear-gradient(90deg, #1cc88a, #13855c) !important;
+}
+
+.badge.bg-info {
+    background: linear-gradient(90deg, #36b9cc, #258391) !important;
+}
+
+.badge.bg-warning {
+    background: linear-gradient(90deg, #f6c23e, #dda20a) !important;
+}
+
+.badge.bg-danger {
+    background: linear-gradient(90deg, #e74a3b, #be2617) !important;
+}
+
+.badge.bg-secondary {
+    background: linear-gradient(90deg, #858796, #606266) !important;
+}
+
+/* Уведомления */
+.alert {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+.alert-success {
+    background: linear-gradient(90deg, #1cc88a20, #13855c20);
+    color: #13855c;
+}
+
+.alert-info {
+    background: linear-gradient(90deg, #36b9cc20, #25839120);
+    color: #258391;
+}
+
+.alert-warning {
+    background: linear-gradient(90deg, #f6c23e20, #dda20a20);
+    color: #dda20a;
+}
+
+.alert-danger {
+    background: linear-gradient(90deg, #e74a3b20, #be261720);
+    color: #be2617;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #2c3e50, #34495e);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Иконки */
+.bi {
+    margin-right: 0.5rem;
+}
+
+/* Статистика */
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stat-card h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.stat-card p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Быстрые действия */
+.btn-outline-primary,
+.btn-outline-success,
+.btn-outline-info,
+.btn-outline-warning {
+    border-width: 2px;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(90deg, #4e73df, #224abe);
+    color: white;
+}
+
+.btn-outline-success:hover {
+    background: linear-gradient(90deg, #1cc88a, #13855c);
+    color: white;
+}
+
+.btn-outline-info:hover {
+    background: linear-gradient(90deg, #36b9cc, #258391);
+    color: white;
+}
+
+.btn-outline-warning:hover {
+    background: linear-gradient(90deg, #f6c23e, #dda20a);
+    color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .stat-card h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #4e73df, #224abe);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #224abe, #4e73df);
+}

@@ -3,94 +3,143 @@
 {% block title %}Главная - Cafe Management{% endblock %}
 
 {% block content %}
-<div class="row">
+<div class="row mb-5">
     <div class="col-12">
-        <h1 class="mb-4"><i class="bi bi-cup-hot"></i> Добро пожаловать в Cafe Management System</h1>
+        <div class="card shadow">
+            <div class="card-body p-5 text-center">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="bi bi-cup-hot text-warning"></i> Добро пожаловать в Cafe Management
+                </h1>
+                <p class="lead text-muted">Система управления кафе нового поколения</p>
+            </div>
+        </div>
     </div>
 </div>
 
 {% if open_shift %}
 <div class="row mb-4">
-    <div class="col-md-12">
-        <div class="alert alert-success">
-            <i class="bi bi-check-circle"></i> 
+    <div class="col-12">
+        <div class="alert alert-success shadow-sm fade-in">
+            <i class="bi bi-check-circle-fill"></i> 
             <strong>Текущая смена:</strong> {{ open_shift }}
+            <a href="{% url 'shifts:shift_detail' open_shift.pk %}" class="btn btn-sm btn-light float-end">
+                Подробнее <i class="bi bi-arrow-right"></i>
+            </a>
         </div>
     </div>
 </div>
 {% else %}
 <div class="row mb-4">
-    <div class="col-md-12">
-        <div class="alert alert-warning">
-            <i class="bi bi-exclamation-triangle"></i> 
+    <div class="col-12">
+        <div class="alert alert-warning shadow-sm fade-in">
+            <i class="bi bi-exclamation-triangle-fill"></i> 
             <strong>Нет открытой смены!</strong> 
-            <a href="{% url 'shifts:shift_create' %}" class="btn btn-sm btn-warning">Открыть смену</a>
+            <a href="{% url 'shifts:shift_create' %}" class="btn btn-sm btn-warning float-end">
+                Открыть смену <i class="bi bi-plus-circle"></i>
+            </a>
         </div>
     </div>
 </div>
 {% endif %}
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="card text-white bg-primary mb-3">
-            <div class="card-header">Столы</div>
+<div class="row mb-5">
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-primary h-100 stat-card shadow">
             <div class="card-body">
-                <h5 class="card-title">{{ total_tables }}</h5>
-                <p class="card-text">Всего столов</p>
-                <a href="{% url 'tables:table_list' %}" class="btn btn-light btn-sm">Управление столами</a>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title text-uppercase mb-2">Столы</h6>
+                        <h2 class="display-4 fw-bold mb-2">{{ total_tables }}</h2>
+                        <p class="card-text mb-0">Всего столов</p>
+                    </div>
+                    <div class="opacity-75">
+                        <i class="bi bi-table" style="font-size: 4rem;"></i>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{% url 'tables:table_list' %}" class="btn btn-light btn-sm">
+                        <i class="bi bi-arrow-right-circle"></i> Управление столами
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     
-    <div class="col-md-4">
-        <div class="card text-white bg-success mb-3">
-            <div class="card-header">Заказы</div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-success h-100 stat-card shadow">
             <div class="card-body">
-                <h5 class="card-title">{{ open_orders }}</h5>
-                <p class="card-text">Открытых заказов</p>
-                <a href="{% url 'orders:order_list' %}" class="btn btn-light btn-sm">Смотреть заказы</a>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title text-uppercase mb-2">Заказы</h6>
+                        <h2 class="display-4 fw-bold mb-2">{{ open_orders }}</h2>
+                        <p class="card-text mb-0">Открытых заказов</p>
+                    </div>
+                    <div class="opacity-75">
+                        <i class="bi bi-receipt" style="font-size: 4rem;"></i>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{% url 'orders:order_list' %}" class="btn btn-light btn-sm">
+                        <i class="bi bi-arrow-right-circle"></i> Смотреть заказы
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     
-    <div class="col-md-4">
-        <div class="card text-white bg-info mb-3">
-            <div class="card-header">Выручка</div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-white bg-info h-100 stat-card shadow">
             <div class="card-body">
-                <h5 class="card-title">{{ today_revenue }} ₽</h5>
-                <p class="card-text">За сегодня</p>
-                <a href="{% url 'shifts:shift_list' %}" class="btn btn-light btn-sm">Смотреть статистику</a>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title text-uppercase mb-2">Выручка</h6>
+                        <h2 class="display-4 fw-bold mb-2">{{ today_revenue }} ₽</h2>
+                        <p class="card-text mb-0">За сегодня</p>
+                    </div>
+                    <div class="opacity-75">
+                        <i class="bi bi-cash-coin" style="font-size: 4rem;"></i>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{% url 'shifts:shift_list' %}" class="btn btn-light btn-sm">
+                        <i class="bi bi-arrow-right-circle"></i> Статистика
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row mt-4">
-    <div class="col-md-12">
-        <div class="card">
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow">
             <div class="card-header">
-                <i class="bi bi-lightning"></i> Быстрые действия
+                <i class="bi bi-lightning-charge"></i> Быстрые действия
             </div>
             <div class="card-body">
-                <div class="row">
+                <div class="row g-3">
                     <div class="col-md-3">
-                        <a href="{% url 'tables:table_create' %}" class="btn btn-outline-primary w-100">
-                            <i class="bi bi-plus-circle"></i> Добавить стол
+                        <a href="{% url 'tables:table_create' %}" class="btn btn-outline-primary w-100 py-3">
+                            <i class="bi bi-plus-circle-dotted" style="font-size: 1.5rem;"></i>
+                            <div class="mt-2">Добавить стол</div>
                         </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="{% url 'menu:dish_create' %}" class="btn btn-outline-success w-100">
-                            <i class="bi bi-plus-circle"></i> Добавить блюдо
+                        <a href="{% url 'menu:dish_create' %}" class="btn btn-outline-success w-100 py-3">
+                            <i class="bi bi-egg-fried" style="font-size: 1.5rem;"></i>
+                            <div class="mt-2">Добавить блюдо</div>
                         </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="{% url 'orders:order_create' %}" class="btn btn-outline-info w-100">
-                            <i class="bi bi-plus-circle"></i> Создать заказ
+                        <a href="{% url 'orders:order_create' %}" class="btn btn-outline-info w-100 py-3">
+                            <i class="bi bi-cart-plus" style="font-size: 1.5rem;"></i>
+                            <div class="mt-2">Создать заказ</div>
                         </a>
                     </div>
                     <div class="col-md-3">
-                        <a href="{% url 'shifts:shift_create' %}" class="btn btn-outline-warning w-100">
-                            <i class="bi bi-plus-circle"></i> Открыть смену
+                        <a href="{% url 'shifts:shift_create' %}" class="btn btn-outline-warning w-100 py-3">
+                            <i class="bi bi-clock-fill" style="font-size: 1.5rem;"></i>
+                            <div class="mt-2">Открыть смену</div>
                         </a>
                     </div>
                 </div>
